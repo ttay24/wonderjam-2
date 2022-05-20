@@ -1,2 +1,1 @@
-export * from "./enums";
-export * from "./game-state";
+export * from "./game-state-store";

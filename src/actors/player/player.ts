@@ -7,6 +7,8 @@ import {
   vec,
   Vector,
 } from "excalibur";
+import { HealthComponent } from "../../components";
+import { ActorType } from "../../core";
 import { Resources } from "../../resources";
 
 export class Player extends Actor {
@@ -24,7 +26,10 @@ export class Player extends Actor {
   }
 
   onInitialize() {
-    this.graphics.use(Resources.Sword.toSprite());
+    this.graphics.use(Resources.Player.toSprite());
+
+    // add some components
+    this.addComponent(new HealthComponent(ActorType.PLAYER));
   }
 
   public update(engine: Engine, delta: number) {
