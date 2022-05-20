@@ -1,17 +1,62 @@
-import { Actor, Color, vec } from 'excalibur';
-import { Resources } from '../../resources';
+import {
+  Actor,
+  CollisionType,
+  Color,
+  Engine,
+  Input,
+  vec,
+  Vector,
+} from "excalibur";
+import { Resources } from "../../resources";
 
 export class Player extends Actor {
+  private speed: number = 0.24;
+
   constructor() {
     super({
       pos: vec(150, 150),
-      width: 25,
-      height: 25,
-      color: new Color(255, 255, 255)
+      width: 32,
+      height: 32,
+      color: new Color(255, 255, 255),
     });
+
+    this.body.collisionType = CollisionType.Fixed;
   }
 
   onInitialize() {
     this.graphics.use(Resources.Sword.toSprite());
+  }
+
+  public update(engine: Engine, delta: number) {
+    super.update(engine, delta);
+
+    // handle player movement
+    this.handleMovement(engine, delta);
+  }
+
+  private handleMovement(engine: Engine, delta: number) {
+    const keyboard = engine.input.keyboard;
+
+    let movement: Vector = new Vector(0, 0);
+
+    // handle the input
+    if (keyboard.isHeld(Input.Keys.W)) {
+      movement.y = -1;
+    }
+    if (keyboard.isHeld(Input.Keys.S)) {
+      movement.y = 1;
+    }
+    if (keyboard.isHeld(Input.Keys.A)) {
+      movement.x = -1;
+    }
+    if (keyboard.isHeld(Input.Keys.D)) {
+      movement.x = 1;
+    }
+
+    // normalize the input and do some movement
+    if (movement.x !== 0 || movement.y !== 0) {
+      movement = movement.normalize().scale(delta * this.speed);
+      this.pos.addEqual(movement);
+    }
   }
 }

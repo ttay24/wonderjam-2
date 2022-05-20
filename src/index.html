@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style type="text/css">
+      #root {
+        /* When this is relative, child elements positioned absolutely will
+           be relative to this element, not the document providing more accurate
+           positioning, since the canvas will be at (0, 0) */
+        position: relative;
+      }
+
+      #root #ui {
+        /* This will make the UI appear on top of the canvas */
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Define a wrapping element, in case you want to customize positions -->
+    <div id="root">
+      <!-- Provide your own canvas to Excalibur -->
+      <canvas id="game"></canvas>
+
+      <!-- The UI will automatically be drawn above the game due to z-indexing -->
+      <div id="ui">
+        <!-- This is where your game UI will go, dynamically created per scene -->
+      </div>
+    </div>
+  </body>
+</html>
