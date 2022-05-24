@@ -47,6 +47,18 @@
                 "x": 2467.333333333333,
                 "y": 820.6666666666666
             }
+        },
+        "tiled/maps/main.json": {
+            "scale": 4,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 315.625,
+                "y": 264.625
+            }
+        },
+        "tiled/maps/main.json#kenney-urban-rpg": {
+            "dynamicWrapping": false,
+            "scaleInDock": 1
         }
     },
     "last.imagePath": "C:/development/games/typescript/wonderjam-2/tiled/spritesheets/kenney_rpgurbanpack/Tilemap",
@@ -63,10 +75,11 @@
     "project": "wonderjam-2.tiled-project",
     "property.type": "float",
     "recentFiles": [
+        "tiled/maps/main.json"
     ],
     "tileset.embedInMap": true,
     "tileset.margin": 0,
-    "tileset.spacing": 1,
+    "tileset.spacing": 0,
     "tileset.tileSize": {
         "height": 16,
         "width": 16

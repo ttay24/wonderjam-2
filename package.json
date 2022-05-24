@@ -33,8 +33,8 @@
     "webpack-merge": "5.8.0"
   },
   "dependencies": {
-    "@excaliburjs/plugin-tiled": "^0.25.3",
-    "excalibur": "0.25.3",
+    "@excaliburjs/plugin-tiled": "^0.26.1",
+    "excalibur": "0.26.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "zustand": "^4.0.0-rc.1"

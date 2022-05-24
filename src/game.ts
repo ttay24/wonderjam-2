@@ -2,7 +2,6 @@ import { Engine, Loader, DisplayMode } from "excalibur";
 import { LevelOne } from "./scenes/level-one/level-one";
 import { Player } from "./actors/player/player";
 import { Maps, Resources } from "./resources";
-import { PointerScope } from "excalibur/build/dist/Input/PointerScope";
 import { MainWorld } from "./scenes/main-world/main-world";
 
 /**
@@ -19,7 +18,7 @@ export class Game extends Engine {
       height: 720,
       displayMode: DisplayMode.FitScreen,
       canvasElementId: "game",
-      pointerScope: PointerScope.Document,
+      pointerScope: "Document" as any,
       suppressPlayButton: false,
       maxFps: 60,
     });
