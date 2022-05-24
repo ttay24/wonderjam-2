@@ -1,7 +1,7 @@
 import { Engine, Loader, DisplayMode } from "excalibur";
 import { LevelOne } from "./scenes/level-one/level-one";
 import { Player } from "./actors/player/player";
-import { Resources } from "./resources";
+import { Maps, Resources } from "./resources";
 import { PointerScope } from "excalibur/build/dist/Input/PointerScope";
 import { MainWorld } from "./scenes/main-world/main-world";
 
@@ -40,7 +40,10 @@ export class Game extends Engine {
     this.add("main-world", this.mainWorld);
 
     // Automatically load all default resources
-    const loader = new Loader(Object.values(Resources));
+    const loader = new Loader([
+      ...Object.values(Maps),
+      ...Object.values(Resources),
+    ]);
 
     return super.start(loader);
   }

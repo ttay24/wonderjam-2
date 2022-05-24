@@ -1,6 +1,7 @@
 const path = require("path");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   entry: "./src/index.ts",
@@ -24,6 +25,10 @@ module.exports = {
         enforce: "pre",
       },
       {
+        test: /\.json$/,
+        type: "json",
+      },
+      {
         test: /\.tsx?$/,
         use: "ts-loader",
         exclude: /node_modules/,
@@ -43,6 +48,12 @@ module.exports = {
     new HtmlWebPackPlugin({
       title: "WONDERJAM 2",
       template: "./src/index.html",
+    }),
+    new CopyPlugin({
+      patterns: [
+        { from: "./tiled/maps", to: "./maps" },
+        { from: "./tiled/spritesheets", to: "./spritesheets" },
+      ],
     }),
   ],
 };

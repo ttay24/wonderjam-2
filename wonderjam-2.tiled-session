@@ -1,0 +1,77 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "",
+    "expandedProjectPaths": [
+    ],
+    "file.lastUsedOpenFilter": "All Files (*)",
+    "fileStates": {
+        "K:/My Files/Development/Games/excaliburjs/test-game/client/maps/test-map.tmx": {
+            "scale": 2,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 350,
+                "y": 317
+            }
+        },
+        "K:/My Files/Development/Games/excaliburjs/test-game/client/src/maps/test-map.json": {
+            "scale": 1,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 384,
+                "y": 384
+            }
+        },
+        "K:/My Files/Development/Games/excaliburjs/ttay-jam-craft/maps/main-map.json": {
+            "scale": 1.5,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 758.3333333333333,
+                "y": 480.3333333333333
+            }
+        },
+        "K:/My Files/Development/WC3/Map Dev/SuperSmashBrosWC3/tiled-maps/test-map.tmx": {
+            "scale": 0.65,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 7001.538461538461,
+                "y": 3418.461538461538
+            }
+        },
+        "K:/My Files/Development/test-tiled-map.tmx": {
+            "scale": 0.75,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 2467.333333333333,
+                "y": 820.6666666666666
+            }
+        }
+    },
+    "last.imagePath": "C:/development/games/typescript/wonderjam-2/tiled/spritesheets/kenney_rpgurbanpack/Tilemap",
+    "map.fixedSize": true,
+    "map.height": 120,
+    "map.lastUsedExportFilter": "All Files (*)",
+    "map.lastUsedFormat": "json",
+    "map.orientation": 1,
+    "map.tileHeight": 32,
+    "map.tileWidth": 32,
+    "map.width": 120,
+    "openFiles": [
+    ],
+    "project": "wonderjam-2.tiled-project",
+    "property.type": "float",
+    "recentFiles": [
+    ],
+    "tileset.embedInMap": true,
+    "tileset.margin": 0,
+    "tileset.spacing": 1,
+    "tileset.tileSize": {
+        "height": 16,
+        "width": 16
+    },
+    "tileset.transparentColor": "#ff00ff",
+    "tileset.type": 0,
+    "tileset.useTransparentColor": false
+}

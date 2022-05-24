@@ -1,4 +1,5 @@
 import { ImageSource } from "excalibur";
+import { TiledMapResource } from "@excaliburjs/plugin-tiled";
 import sword from "./images/sword.png";
 import player from "./images/player.png";
 
@@ -11,4 +12,8 @@ const Resources = {
   Sword: new ImageSource(sword),
 };
 
-export { Resources };
+const Maps = {
+  MainWorld: new TiledMapResource("/maps/main.json"),
+};
+
+export { Maps, Resources };
