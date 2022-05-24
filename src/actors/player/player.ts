@@ -12,7 +12,7 @@ import { ActorType } from "../../core";
 import { Resources } from "../../resources";
 
 export class Player extends Actor {
-  private speed: number = 0.24;
+  private speed: number = 0.08;
 
   constructor() {
     super({
@@ -20,9 +20,9 @@ export class Player extends Actor {
       width: 32,
       height: 32,
       color: new Color(255, 255, 255),
+      scale: new Vector(0.5, 0.5),
+      collisionType: CollisionType.Active,
     });
-
-    this.body.collisionType = CollisionType.Fixed;
   }
 
   onInitialize() {

@@ -14,19 +14,21 @@
         position: absolute;
         top: 0;
         left: 0;
+        height: calc(100% - 4px);
+        aspect-ratio: 16 / 9;
+        background-color: rgba(255, 0, 0, 0.5);
       }
     </style>
   </head>
-  <body>
+  <body style="background-color: #777777">
     <!-- Define a wrapping element, in case you want to customize positions -->
     <div id="root">
       <!-- Provide your own canvas to Excalibur -->
       <canvas id="game"></canvas>
 
       <!-- The UI will automatically be drawn above the game due to z-indexing -->
-      <div id="ui">
-        <!-- This is where your game UI will go, dynamically created per scene -->
-      </div>
+      <!-- <div id="ui">
+      </div> -->
     </div>
   </body>
 </html>

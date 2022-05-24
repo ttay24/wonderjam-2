@@ -19,12 +19,14 @@ export class Game extends Engine {
       displayMode: DisplayMode.FitScreen,
       canvasElementId: "game",
       pointerScope: "Document" as any,
-      suppressPlayButton: false,
+      suppressPlayButton: true,
       maxFps: 60,
     });
   }
 
   public async start(): Promise<void> {
+    this.showDebug(false);
+
     // Create new scene with a player
     this.levelOne = new LevelOne();
     this.mainWorld = new MainWorld();
@@ -33,6 +35,8 @@ export class Game extends Engine {
     this.player = new Player();
     this.levelOne.add(this.player);
     this.mainWorld.add(this.player);
+
+    this.mainWorld.camera.strategy.elasticToActor(this.player, 0.8, 0.9);
 
     // add the scenes
     this.add("levelOne", this.levelOne);
