@@ -13,7 +13,7 @@ const Resources = {
 };
 
 const Maps = {
-  MainWorld: new TiledMapResource("/maps/main.json"),
+  MainWorld: new TiledMapResource("/maps/main-v2.json"),
 };
 
 export { Maps, Resources };
