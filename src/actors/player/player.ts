@@ -14,14 +14,15 @@ import { Resources } from "../../resources";
 export class Player extends Actor {
   private speed: number = 0.08;
 
-  constructor() {
+  constructor(startLoc: Vector) {
     super({
-      pos: vec(150, 150),
-      width: 32,
-      height: 32,
+      pos: startLoc,
+      width: 128,
+      height: 128,
       color: new Color(255, 255, 255),
-      scale: new Vector(0.5, 0.5),
+      scale: new Vector(0.125, 0.125),
       collisionType: CollisionType.Active,
+      z: 3,
     });
   }
 
@@ -30,6 +31,10 @@ export class Player extends Actor {
 
     // add some components
     this.addComponent(new HealthComponent(ActorType.PLAYER));
+
+    this.on("collisionstart", (event) => {
+      console.log(event);
+    });
   }
 
   public update(engine: Engine, delta: number) {

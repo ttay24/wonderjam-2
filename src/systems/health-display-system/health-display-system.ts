@@ -15,9 +15,8 @@ export class HealthDisplaySystem extends System<HealthComponent> {
 
       // if the type is player, then we want to notify the state store for UI display reasons
       if (target.actorType === ActorType.PLAYER) {
-        console.log(`health for ${entity.name}`);
-        const test = gameStateStore.getState();
-        test.changeState(GameState.IN_GAME);
+        /*const test = gameStateStore.getState();
+        test.changeState(GameState.IN_GAME);*/
       }
     }
   }

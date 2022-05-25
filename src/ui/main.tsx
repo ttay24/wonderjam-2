@@ -1,6 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { GameState } from "../core";
 import { useStore } from "../state";
+import { InGame } from "./game/in-game";
 import { MainMenu } from "./menus/main-menu";
 
 interface MainProps {
@@ -12,7 +14,8 @@ function Main(props: MainProps) {
 
   return (
     <>
-      <MainMenu></MainMenu>
+      {state.gameState === GameState.MAIN_MENU && <MainMenu></MainMenu>}
+      {state.gameState === GameState.IN_GAME && <InGame></InGame>}
       <div>{state.gameState.toString()}</div>
       <button onClick={props.requestFullScreen}>Fullscreen</button>
     </>

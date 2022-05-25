@@ -1,4 +1,4 @@
-import { Engine, Loader, DisplayMode } from "excalibur";
+import { Engine, Loader, DisplayMode, Vector, vec } from "excalibur";
 import { LevelOne } from "./scenes/level-one/level-one";
 import { Player } from "./actors/player/player";
 import { Maps, Resources } from "./resources";
@@ -31,11 +31,18 @@ export class Game extends Engine {
     this.levelOne = new LevelOne();
     this.mainWorld = new MainWorld();
 
+    // get player starting location
+    await Maps.MainWorld.load();
+    const objectsLayer = Maps.MainWorld.data.getExcaliburObjects()?.[0];
+    const playerStart = objectsLayer.getObjectByType("PlayerStart");
+    const startLoc = vec(playerStart.x, playerStart.y);
+
     // setup actors
-    this.player = new Player();
+    this.player = new Player(startLoc);
     this.levelOne.add(this.player);
     this.mainWorld.add(this.player);
 
+    // set camera strat
     this.mainWorld.camera.strategy.elasticToActor(this.player, 0.8, 0.9);
 
     // add the scenes
