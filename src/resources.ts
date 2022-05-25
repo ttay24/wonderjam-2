@@ -1,5 +1,5 @@
 import { ImageSource } from "excalibur";
-import { TiledMapResource } from "@excaliburjs/plugin-tiled";
+import { TiledMapResource } from "./fixed-tiled/excalibur-tiled";
 import sword from "./images/sword.png";
 import player from "./images/player.png";
 

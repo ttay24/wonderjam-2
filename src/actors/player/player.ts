@@ -33,7 +33,9 @@ export class Player extends Actor {
     this.addComponent(new HealthComponent(ActorType.PLAYER));
 
     this.on("collisionstart", (event) => {
-      console.log(event);
+      if (event.other instanceof Actor) {
+        console.log(event);
+      }
     });
   }
 

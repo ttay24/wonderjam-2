@@ -1,0 +1,3 @@
+/*! For license information please see _boot.3054197577.js.LICENSE.txt */
+"use strict";!function(e,t){"object"==typeof exports&&"object"==typeof module?module.exports=t(require("excalibur")):"function"==typeof define&&define.amd?define(["excalibur"],t):"object"==typeof exports?exports.ex=t(require("excalibur")):(e.ex=e.ex||{},e.ex.Plugin=e.ex.Plugin||{},e.ex.Plugin.Tiled=t(e.ex))}(self,(e=>(self.webpackChunkex_Plugin_Tiled=self.webpackChunkex_Plugin_Tiled||[]).push([["_boot.3054197577"],{excalibur:t=>{t.exports=e}},e=>(e.O(0,["commons"],(()=>("./test/unit/_boot.ts",e(e.s="./test/unit/_boot.ts")))),e.O())])));
+//# sourceMappingURL=_boot.3054197577.js.map
