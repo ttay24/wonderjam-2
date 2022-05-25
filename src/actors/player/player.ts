@@ -14,7 +14,7 @@ import { Resources } from "../../resources";
 export class Player extends Actor {
   private speed: number = 0.08;
 
-  constructor(startLoc: Vector) {
+  constructor(startLoc: Vector, private engine: Engine) {
     super({
       pos: startLoc,
       width: 128,
@@ -35,6 +35,8 @@ export class Player extends Actor {
     this.on("collisionstart", (event) => {
       if (event.other instanceof Actor) {
         console.log(event);
+        // TODO: need more filtering here
+        this.engine.goToScene("kitchen");
       }
     });
   }

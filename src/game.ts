@@ -1,8 +1,9 @@
-import { Engine, Loader, DisplayMode, Vector, vec } from "excalibur";
+import { Engine, Loader, DisplayMode, Vector, vec, Scene } from "excalibur";
 import { LevelOne } from "./scenes/level-one/level-one";
 import { Player } from "./actors/player/player";
 import { Maps, Resources } from "./resources";
 import { MainWorld } from "./scenes/main-world/main-world";
+import { Kitchen } from "./scenes/kitchen/kitchen";
 
 /**
  * Managed game class
@@ -11,6 +12,7 @@ export class Game extends Engine {
   private player: Player;
   private levelOne: LevelOne;
   private mainWorld: MainWorld;
+  private kitchen: Kitchen;
 
   constructor() {
     super({
@@ -30,6 +32,7 @@ export class Game extends Engine {
     // Create new scene with a player
     this.levelOne = new LevelOne();
     this.mainWorld = new MainWorld();
+    this.kitchen = new Kitchen();
 
     // get player starting location
     await Maps.MainWorld.load();
@@ -38,16 +41,18 @@ export class Game extends Engine {
     const startLoc = vec(playerStart.x, playerStart.y);
 
     // setup actors
-    this.player = new Player(startLoc);
+    this.player = new Player(startLoc, this);
     this.levelOne.add(this.player);
     this.mainWorld.add(this.player);
+    this.kitchen.add(this.player);
 
     // set camera strat
-    this.mainWorld.camera.strategy.elasticToActor(this.player, 0.8, 0.9);
+    this.setCamera([this.mainWorld, this.kitchen]);
 
     // add the scenes
     this.add("levelOne", this.levelOne);
     this.add("main-world", this.mainWorld);
+    this.add("kitchen", this.kitchen);
 
     // Automatically load all default resources
     const loader = new Loader([
@@ -56,5 +61,12 @@ export class Game extends Engine {
     ]);
 
     return super.start(loader);
+  }
+
+  setCamera(scenes: Scene[]) {
+    for (const scene of scenes) {
+      scene.camera.strategy.elasticToActor(this.player, 0.8, 0.9);
+      scene.camera.zoom = 3.5;
+    }
   }
 }

@@ -14,6 +14,7 @@ const Resources = {
 
 const Maps = {
   MainWorld: new TiledMapResource("/maps/main.json"),
+  Kitchen: new TiledMapResource("/maps/kitchen.json"),
 };
 
 export { Maps, Resources };
