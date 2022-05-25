@@ -1,6 +1,6 @@
 import { Game } from "./game";
 import { DevTool } from "@excaliburjs/dev-tools";
-//import "./ui/main";
+import { render } from "./ui/main";
 
 // create the game
 const game = new Game();
@@ -15,4 +15,6 @@ game.start().then(() => {
   /*setTimeout(() => {
     game.screen.goFullScreen().catch((err) => console.error(err));
   }, 3000);*/
+
+  render();
 });

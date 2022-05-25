@@ -3,6 +3,8 @@
   <head>
     <style type="text/css">
       #root {
+        display: flex;
+        justify-content: center;
         /* When this is relative, child elements positioned absolutely will
            be relative to this element, not the document providing more accurate
            positioning, since the canvas will be at (0, 0) */
@@ -12,11 +14,10 @@
       #root #ui {
         /* This will make the UI appear on top of the canvas */
         position: absolute;
-        top: 0;
-        left: 0;
         height: calc(100% - 4px);
         aspect-ratio: 16 / 9;
-        background-color: rgba(255, 0, 0, 0.5);
+        margin-left: 0;
+        margin-right: 0;
       }
     </style>
   </head>
@@ -27,8 +28,7 @@
       <canvas id="game"></canvas>
 
       <!-- The UI will automatically be drawn above the game due to z-indexing -->
-      <!-- <div id="ui">
-      </div> -->
+      <div id="ui"></div>
     </div>
   </body>
 </html>
