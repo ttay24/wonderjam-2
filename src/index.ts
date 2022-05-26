@@ -1,8 +1,10 @@
 import { Game } from "./game";
 import { DevTool } from "@excaliburjs/dev-tools";
 import { render } from "./ui/main";
+import { Flags } from "excalibur";
 
 // create the game
+Flags.enable("use-webgl");
 const game = new Game();
 
 // start the game
