@@ -16,5 +16,5 @@ game.start().then(() => {
     game.screen.goFullScreen().catch((err) => console.error(err));
   }, 3000);*/
 
-  render();
+  //render();
 });

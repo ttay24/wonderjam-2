@@ -4,6 +4,7 @@ import { Player } from "./actors/player/player";
 import { Maps, Resources } from "./resources";
 import { MainWorld } from "./scenes/main-world/main-world";
 import { Kitchen } from "./scenes/kitchen/kitchen";
+import { render } from "./ui/main";
 
 /**
  * Managed game class
@@ -28,6 +29,9 @@ export class Game extends Engine {
 
   public async start(): Promise<void> {
     this.showDebug(false);
+
+    // start react ui
+    render(this);
 
     // Create new scene with a player
     this.levelOne = new LevelOne();
