@@ -104,18 +104,22 @@
             "expandedObjectLayers": [
                 4
             ],
-            "scale": 4,
-            "selectedLayer": 3,
+            "scale": 3,
+            "selectedLayer": 2,
             "viewCenter": {
-                "x": 637.375,
-                "y": 616.125
+                "x": 670.1666666666666,
+                "y": 511.16666666666663
             }
         },
         "tiled/maps/kitchen.json#kenney-urban": {
             "scaleInDock": 1.5
         },
         "tiled/maps/kitchen.json#kenny-rogue-rpg": {
-            "scaleInDock": 1.5
+            "scaleInDock": 1.5,
+            "scaleInEditor": 1
+        },
+        "tiled/maps/kitchen.json#roguelikeIndoor_transparent": {
+            "scaleInDock": 3
         },
         "tiled/maps/main-v2.json": {
             "expandedObjectLayers": [
@@ -136,10 +140,10 @@
                 3
             ],
             "scale": 2,
-            "selectedLayer": 5,
+            "selectedLayer": 3,
             "viewCenter": {
-                "x": 985.25,
-                "y": 508.75
+                "x": 984.75,
+                "y": 589.25
             }
         },
         "tiled/maps/main.json#kenney-rogue-modern": {
@@ -171,7 +175,7 @@
     },
     "last.exportedFilePath": "C:/development/games/typescript/wonderjam-2/tiled/maps",
     "last.externalTilesetPath": "C:/development/games/typescript/wonderjam-2/tiled/maps/example",
-    "last.imagePath": "C:/development/games/typescript/excalibur-tiled/example/assets/roguelike-modern-city-pack",
+    "last.imagePath": "C:/development/games/typescript/wonderjam-2/tiled/spritesheets/roguelikeindoor_updated/Tilesheets",
     "map.fixedSize": true,
     "map.height": 80,
     "map.lastUsedExportFilter": "All Files (*)",
@@ -185,7 +189,7 @@
         "tiled/maps/kitchen.json"
     ],
     "project": "wonderjam-2.tiled-project",
-    "property.type": "float",
+    "property.type": "bool",
     "recentFiles": [
         "tiled/maps/main.json",
         "tiled/maps/kitchen.json",

@@ -1,5 +1,6 @@
 import { ImageSource } from "excalibur";
 import { TiledMapResource } from "@excaliburjs/plugin-tiled";
+import cashBag from "./images/cash-bag.png";
 import sword from "./images/sword.png";
 import player from "./images/player.png";
 
@@ -10,6 +11,7 @@ import player from "./images/player.png";
 const Resources = {
   Player: new ImageSource(player),
   Sword: new ImageSource(sword),
+  CashBag: new ImageSource(cashBag),
 };
 
 const Maps = {

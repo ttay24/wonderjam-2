@@ -677,12 +677,12 @@
                         {
                          "name":"to_pos_x",
                          "type":"float",
-                         "value":0
+                         "value":680
                         }, 
                         {
                          "name":"to_pos_y",
                          "type":"float",
-                         "value":0
+                         "value":680
                         }],
                  "rotation":0,
                  "type":"BoxCollider",
@@ -708,6 +708,114 @@
                  "width":0,
                  "x":1047,
                  "y":534.5
+                }, 
+                {
+                 "height":0,
+                 "id":13,
+                 "name":"",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"excalibur",
+                         "type":"bool",
+                         "value":true
+                        }],
+                 "rotation":0,
+                 "type":"CashBag",
+                 "visible":true,
+                 "width":0,
+                 "x":873.5,
+                 "y":644
+                }, 
+                {
+                 "height":0,
+                 "id":14,
+                 "name":"",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"excalibur",
+                         "type":"bool",
+                         "value":true
+                        }],
+                 "rotation":0,
+                 "type":"CashBag",
+                 "visible":true,
+                 "width":0,
+                 "x":417.5,
+                 "y":620
+                }, 
+                {
+                 "height":0,
+                 "id":15,
+                 "name":"",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"excalibur",
+                         "type":"bool",
+                         "value":true
+                        }],
+                 "rotation":0,
+                 "type":"CashBag",
+                 "visible":true,
+                 "width":0,
+                 "x":504,
+                 "y":299
+                }, 
+                {
+                 "height":0,
+                 "id":16,
+                 "name":"",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"excalibur",
+                         "type":"bool",
+                         "value":true
+                        }],
+                 "rotation":0,
+                 "type":"CashBag",
+                 "visible":true,
+                 "width":0,
+                 "x":918.5,
+                 "y":330
+                }, 
+                {
+                 "height":0,
+                 "id":17,
+                 "name":"",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"excalibur",
+                         "type":"bool",
+                         "value":true
+                        }],
+                 "rotation":0,
+                 "type":"CashBag",
+                 "visible":true,
+                 "width":0,
+                 "x":1252.5,
+                 "y":416
+                }, 
+                {
+                 "height":0,
+                 "id":18,
+                 "name":"",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"excalibur",
+                         "type":"bool",
+                         "value":true
+                        }],
+                 "rotation":0,
+                 "type":"CashBag",
+                 "visible":true,
+                 "width":0,
+                 "x":1311,
+                 "y":952.5
                 }],
          "opacity":1,
          "properties":[
@@ -722,7 +830,7 @@
          "y":0
         }],
  "nextlayerid":7,
- "nextobjectid":13,
+ "nextobjectid":19,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.8.5",

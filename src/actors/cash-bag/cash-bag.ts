@@ -13,16 +13,16 @@ export class CashBag extends Actor {
   constructor(startLoc: Vector, private engine: Engine) {
     super({
       pos: startLoc,
-      width: 50,
-      height: 50,
+      width: 128,
+      height: 128,
       color: new Color(255, 255, 255),
-      scale: new Vector(0.25, 0.25),
+      scale: new Vector(0.125, 0.125),
       collisionType: CollisionType.Passive,
       z: 3,
     });
   }
 
   onInitialize() {
-    this.graphics.use(Resources.Sword.toSprite());
+    this.graphics.use(Resources.CashBag.toSprite());
   }
 }

@@ -54,7 +54,10 @@ export class Player extends Actor {
         const waypoint: string = tiledComponent.getProperty("Waypoint")
           .value as string;
         this.engine.goToScene(waypoint);
-        this.pos = vec(680, 680);
+        const x = +tiledComponent.getProperty("to_pos_x").value;
+        const y = +tiledComponent.getProperty("to_pos_y").value;
+        this.pos = vec(x, y);
+        this.engine.currentScene.camera.pos = this.pos;
       }
 
       // pickup the moneys
