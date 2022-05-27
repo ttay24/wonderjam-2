@@ -7,12 +7,18 @@ import {
   vec,
   Vector,
 } from "excalibur";
-import { HealthComponent } from "../../components";
+import { TiledObject } from "@excaliburjs/plugin-tiled";
+import { HealthComponent, ResourcesComponent } from "../../components";
 import { ActorType } from "../../core";
 import { Resources } from "../../resources";
+import { CashBag } from "../cash-bag/cash-bag";
 
 export class Player extends Actor {
   private speed: number = 0.08;
+
+  // components
+  healthComponent: HealthComponent;
+  resourcesComponent: ResourcesComponent;
 
   constructor(startLoc: Vector, private engine: Engine) {
     super({
@@ -30,13 +36,30 @@ export class Player extends Actor {
     this.graphics.use(Resources.Player.toSprite());
 
     // add some components
-    this.addComponent(new HealthComponent(ActorType.PLAYER));
+    this.healthComponent = new HealthComponent(ActorType.PLAYER);
+    this.resourcesComponent = new ResourcesComponent();
+    this.addComponent(this.healthComponent);
+    this.addComponent(this.resourcesComponent);
 
     this.on("collisionstart", (event) => {
-      if (event.other instanceof Actor) {
-        console.log(event);
-        // TODO: need more filtering here
-        this.engine.goToScene("kitchen");
+      if (!event.other) return;
+
+      // do waypoint things
+      const tiledComponent: TiledObject = (
+        event.other
+          .getComponents()
+          .find((c) => c.type === "ex.tiledobject") as any
+      )?.object as TiledObject;
+      if (tiledComponent?.getProperty("Waypoint")) {
+        const waypoint: string = tiledComponent.getProperty("Waypoint")
+          .value as string;
+        this.engine.goToScene(waypoint);
+      }
+
+      // pickup the moneys
+      if (event.other instanceof CashBag) {
+        this.addCash(10);
+        event.other.kill();
       }
     });
   }
@@ -72,5 +95,9 @@ export class Player extends Actor {
       movement = movement.normalize().scale(delta * this.speed);
       this.pos.addEqual(movement);
     }
+  }
+
+  private addCash(cash: number) {
+    this.resourcesComponent.cash += cash;
   }
 }

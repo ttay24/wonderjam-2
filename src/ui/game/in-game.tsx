@@ -1,10 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { useStore } from "../../state";
 
 export function InGame() {
+  const state = useStore();
+
   return (
     <div>
-      <button onClick={test}>PAUSE</button>
+      <div>CASH: {state.cash}</div>
     </div>
   );
 

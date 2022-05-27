@@ -672,7 +672,17 @@
                         {
                          "name":"Waypoint",
                          "type":"string",
-                         "value":"Kitchen"
+                         "value":"kitchen"
+                        }, 
+                        {
+                         "name":"to_pos_x",
+                         "type":"float",
+                         "value":0
+                        }, 
+                        {
+                         "name":"to_pos_y",
+                         "type":"float",
+                         "value":0
                         }],
                  "rotation":0,
                  "type":"BoxCollider",
@@ -680,6 +690,24 @@
                  "width":14.75,
                  "x":913.25,
                  "y":497.25
+                }, 
+                {
+                 "height":0,
+                 "id":12,
+                 "name":"",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"excalibur",
+                         "type":"bool",
+                         "value":true
+                        }],
+                 "rotation":0,
+                 "type":"CashBag",
+                 "visible":true,
+                 "width":0,
+                 "x":1047,
+                 "y":534.5
                 }],
          "opacity":1,
          "properties":[
@@ -694,7 +722,7 @@
          "y":0
         }],
  "nextlayerid":7,
- "nextobjectid":12,
+ "nextobjectid":13,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.8.5",

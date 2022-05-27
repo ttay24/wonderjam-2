@@ -16,13 +16,16 @@ function Main(props: MainProps) {
 
   return (
     <>
-      {state.gameState === GameState.MAIN_MENU && <MainMenu></MainMenu>}
-      {state.gameState === GameState.IN_GAME && <InGame></InGame>}
-      <div>{state.gameState.toString()}</div>
-      <button onClick={props.requestFullScreen}>Fullscreen</button>
-      <button onClick={() => props.game.goToScene("main-world")}>
-        Main World
-      </button>
+      <div>
+        <button onClick={props.requestFullScreen}>Fullscreen</button>
+        <button onClick={() => props.game.goToScene("main-world")}>
+          Main World
+        </button>
+      </div>
+      <div style={{ padding: "0.5rem", fontWeight: "bold", cursor: "default" }}>
+        {state.gameState === GameState.MAIN_MENU && <MainMenu></MainMenu>}
+        {state.gameState === GameState.IN_GAME && <InGame></InGame>}
+      </div>
     </>
   );
 }
