@@ -34,9 +34,15 @@
   },
   "dependencies": {
     "@excaliburjs/plugin-tiled": "^0.26.2",
+    "@headlessui/react": "^1.6.4",
     "excalibur": "0.26.0",
+    "leva": "^0.9.27",
+    "pubsub-js": "^1.9.4",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
+    "react-icons": "^4.3.1",
+    "react-modal": "^3.15.1",
+    "react-spring": "^9.4.5",
     "zustand": "^4.0.0-rc.1"
   }
 }
