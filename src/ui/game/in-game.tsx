@@ -28,7 +28,7 @@ export function InGame() {
         <MenuModal close={closeMenu}></MenuModal>
       </Dialog> */}
 
-      <MenuModal close={closeMenu}></MenuModal>
+      <MenuModal isOpen={isMenuOpen} close={closeMenu}></MenuModal>
     </div>
   );
 

@@ -4,8 +4,12 @@ import { createPortal } from "react-dom";
 
 const uiContainer = document.getElementById("ui");
 
-export interface ModalProps {
+export interface BaseModalProps {
+  isOpen: boolean;
   close: () => void;
+}
+
+export interface ModalProps extends BaseModalProps {
   children: any;
 }
 
@@ -18,5 +22,9 @@ const style: CSSProperties = {
 };
 
 export function Modal(props: ModalProps) {
-  return createPortal(<div style={style}>{props.children}</div>, uiContainer);
+  return props.isOpen ? (
+    createPortal(<div style={style}>{props.children}</div>, uiContainer)
+  ) : (
+    <></>
+  );
 }
